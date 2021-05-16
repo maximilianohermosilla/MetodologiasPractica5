@@ -60,6 +60,7 @@
     <Compile Include="FabricaDeAlumnos.cs" />
     <Compile Include="FabricaDeComparables.cs" />
     <Compile Include="FabricaDeNumeros.cs" />
+    <Compile Include="FabricaDeVendedores.cs" />
     <Compile Include="GeneradorDeDatosAleatorios.cs" />
     <Compile Include="Iterable.cs" />
     <Compile Include="Iterador.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Pila.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vendedor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

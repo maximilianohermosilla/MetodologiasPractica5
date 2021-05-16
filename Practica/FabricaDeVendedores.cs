@@ -4,22 +4,21 @@ using System;
 namespace Practica
 {
 	/// <summary>
-	/// Description of FabricaDeAlumnos.
+	/// Description of FabricaDeVendedores.
 	/// </summary>
-	public class FabricaDeAlumnos: FabricaDeComparables
+	public class FabricaDeVendedores: FabricaDeComparables
 	{	
 		static Random random = new Random();
-		
 		public override Comparable crearComparable(FabricaDeComparables fabrica){
-			Console.WriteLine("\nFABRICA DE ALUMNOS \n****************** \n1) ALEATORIO \n2) POR TECLADO \n");
+			Console.WriteLine("\nFABRICA DE VENDEDORES \n****************** \n1) ALEATORIO \n2) POR TECLADO \n");
 			LectorDeDatos lector=new LectorDeDatos();
 			int indice = lector.numeroPorTeclado();
 			if (indice == num){
-				Console.WriteLine("ALUMNO ALEATORIO\n");
+				Console.WriteLine("VENDEDOR ALEATORIO\n");
 				return fabrica.crearAleatorio();
 			}
 			if (indice == alum){
-				Console.WriteLine("INGRESAR ALUMNO\n");
+				Console.WriteLine("INGRESAR VENDEDOR\n");
 				return fabrica.crearPorTeclado();
 			}
 			else{
@@ -28,22 +27,21 @@ namespace Practica
 			}
 		}
 		
-		public FabricaDeAlumnos(){
+		public FabricaDeVendedores(){
 		}
 		
 		public override Comparable crearAleatorio(){
 			
 			string nombre;
-			int dni, legajo;
-			decimal promedio;
+			int dni;
+			double sueldoBasico;
 			string[] nombres=new string[]{"Maxi","Paula","Roberto","Nacho","Adrian","Diego","Lucia","Florencia","Cintia","Ana","Graciela","Yesica","Daiana","Carolina","Gaston","Luis","Jacinto","Ramona","Ignacia","Viviana"};
 			nombre=nombres[random.Next(0,19)];
 			dni=random.Next(12000000,40000000);
-			legajo=random.Next(1,2000);
-			promedio=decimal.Round((Convert.ToDecimal((random.NextDouble() + random.Next(1,10)))), 2);
-			Comparable alumno = new Alumno(nombre,dni,legajo,promedio);
-			//Console.WriteLine(alumno);
-			return alumno;
+			sueldoBasico=random.Next(20000,200000);
+			Comparable vendedor = new Vendedor(nombre,dni,sueldoBasico);
+			Console.WriteLine(vendedor);
+			return vendedor;
 		}
 		
 		public override Comparable crearPorTeclado(){
@@ -52,12 +50,10 @@ namespace Practica
 			string nombre=lector.stringPorTeclado();
 			Console.WriteLine("DNI");
 			int dni=lector.numeroPorTeclado();
-			Console.WriteLine("LEGAJO");			
-			int legajo=lector.numeroPorTeclado();
-			Console.WriteLine("PROMEDIO");
-			decimal promedio=Convert.ToDecimal(lector.numeroPorTeclado());
-			Comparable alumno=new Alumno(nombre,dni,legajo,promedio);
-			return alumno;
+			Console.WriteLine("SUELDO");			
+			int sueldo=lector.numeroPorTeclado();
+			Comparable vendedor=new Vendedor(nombre,dni,sueldo);
+			return vendedor;
 		}
 	}
 }

@@ -230,4 +230,35 @@ namespace Practica
 			return mayor;
 		}
 	}
+	
+	//ESTRATEGIAS PARA VENDEDOR
+	//-------------------------
+	
+	public class PorBonus: EstrategiaComparar{
+		public bool esIgual (Comparable clave1, Comparable clave2){
+			bool igual=false;
+			if (Convert.ToDecimal(((Vendedor)clave1).getBonus()) == Convert.ToDecimal(((Vendedor)clave2).getBonus())){
+				igual=true;
+			}
+			
+			return igual;
+		}
+		
+		public bool esMenor (Comparable clave1, Comparable clave2){
+			bool menor=false;
+			if (Convert.ToDecimal(((Vendedor)clave1).getBonus()) < Convert.ToDecimal(((Vendedor)clave2).getBonus())){
+				menor=true;
+			}
+			return menor;
+		}
+		
+		public bool esMayor (Comparable clave1, Comparable clave2){
+			bool mayor=false;
+			if (Convert.ToDecimal(((Vendedor)clave1).getBonus()) > Convert.ToDecimal(((Vendedor)clave2).getBonus())){
+				mayor=true;
+			}
+			return mayor;
+		}
+	}
+	
 }

@@ -9,6 +9,7 @@ namespace Practica
 	{
 		public const int num=1;
 		public const int alum=2;
+		public const int vend=3;
 		
 		
 		public static Comparable crearComparables(int tipoComparable){
@@ -18,6 +19,9 @@ namespace Practica
 			}
 			else if (tipoComparable == alum){
 				fabrica = new FabricaDeAlumnos();
+			}
+			else if (tipoComparable == vend){
+				fabrica = new FabricaDeVendedores();
 			}
 			else{
 				return null;
@@ -33,6 +37,9 @@ namespace Practica
 			else if (tipoComparable == alum){
 				fabrica = new FabricaDeAlumnos();
 			}
+			else if (tipoComparable == vend){
+				fabrica = new FabricaDeVendedores();
+			}
 			else{
 				return null;
 			}
@@ -46,6 +53,9 @@ namespace Practica
 			}
 			else if (tipoComparable == alum){
 				fabrica = new FabricaDeAlumnos();
+			}
+			else if (tipoComparable == vend){
+				fabrica = new FabricaDeVendedores();
 			}
 			else{
 				return null;

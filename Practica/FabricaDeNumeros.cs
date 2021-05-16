@@ -8,9 +8,6 @@ namespace Practica
 	/// </summary>
 	public class FabricaDeNumeros: FabricaDeComparables
 	{
-		public const int aleatorio=1;
-		public const int porTeclado=2;
-		
 		static Random random = new Random();
 				
 		public override Comparable crearComparable(FabricaDeComparables fabrica){

@@ -6,13 +6,22 @@ namespace Practica
 	{
 		public static void Main(string[] args)
 		{
+			
+			Console.WriteLine("Practica 3 - Ejercicio 8");
+			
+			
+			
+			
+			//********************************************************//
+			
 			Console.WriteLine("Practica 3 - Ejercicio 6");
+			
 			Coleccionable pila = new Pila<Comparable>();
 			Coleccionable cola = new Cola<Comparable>();
 			ColeccionMultiple multiple = new ColeccionMultiple(((Pila<Comparable>)pila), ((Cola<Comparable>)cola));
 			
 
-			Console.WriteLine("\nLISTA DE COMPARABLES \n********************** \n1) NUMERO \n2) ALUMNO \n");
+			Console.WriteLine("\nLISTA DE COMPARABLES \n********************** \n1) NUMERO \n2) ALUMNO \n3) VENDEDOR\n");
 			int opcion = int.Parse(Console.ReadLine());
 			
 			llenar(pila, opcion);
@@ -25,6 +34,9 @@ namespace Practica
 			else if (opcion==2){
 				cambiarEstrategia(pila, new PorDni());
 			}
+			else if (opcion==3){
+				cambiarEstrategia(pila, new PorBonus());
+			}
 			else{
 				Console.WriteLine("Opcion Incorrecta");
 				Console.ReadKey();
@@ -35,7 +47,9 @@ namespace Practica
 			informar(cola, opcion);
 			Console.WriteLine("\nInformo Multiple\n************\n");
 			informar(multiple, opcion);
-			/////////////////////////////////////////////////////////////
+			
+			
+			//****************************************************************************//
 			
 			Console.WriteLine("Practica 3 - Ejercicio 4 y 5");
 			
@@ -52,27 +66,12 @@ namespace Practica
 			Comparable nuevo = FabricaDeComparables.crearComparables(tipoComparable);
 			Console.WriteLine(nuevo);
 		
-			
-				
-	/*llenar(coleccionable, opcion)
-	repetir 20 veces
-	comparable = fabrica.crearAleatorio(opcion)
-	coleccionable.agregar(comparable)
-	
-	informar(coleccionable, opcion)
-	imprimir (colecionable.cuantos())
-	imprimir (colecionable.minimo())
-	imprimir (colecionable.maximo())
-	comparable = fabrica.crearPorTeclado(opcion)
-	si (coleccionable.contiene(comparable))
-	imprimir(“El elemento leído está en la colección”)
-	sino
-	imprimir(“El elemento leído no está en la colección”)
-	Adapte, modifique y compruebe el correcto funcionamiento de los métodos main de los ejercicios 9 y 17 de la práctica 1. Unifique ambos métodos en un único main.
-	*/
-			
-			
 		}
+		
+		
+		//    METODOS    //
+		//***************//
+		
 		
 		public static void llenar(Coleccionable lista, int opcion){
 			Random random = new Random();
@@ -103,37 +102,6 @@ namespace Practica
 				Console.ReadKey(true);
 			}
 		}
-		
-		/*public static void llenar(Coleccionable lista){
-			Random random = new Random();
-			for (int x=1; x<=20 ; x++){
-				Comparable numero = new Numero(random.Next(1,100));
-				((Coleccionable)lista).agregar(numero);
-			}		
-		}
-			
-		public static void informar(Coleccionable lista){
-			try{
-			Console.Write("Cantidad de elementos: ");
-			Console.WriteLine(lista.cuantos());
-			Console.Write("Mínimo: ");
-			Console.WriteLine((lista.menor()).informar());
-			Console.Write("Máximo: ");
-			Console.WriteLine(lista.mayor().informar());
-			Console.Write("Ingrese número: ");
-			string num = Console.ReadLine();
-			if (lista.contieneNumero(num)){
-				Console.WriteLine("El elemento leído está en la colección");
-			}
-			else{
-				Console.WriteLine("El elemento leído NO está en la colección");
-			}
-			}
-			catch(FormatException){
-				Console.WriteLine("* Numero invalido *");
-				Console.ReadKey(true);
-			}
-		}*/
 		
 		public static void llenarPersonas(Coleccionable lista){
 			
