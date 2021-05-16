@@ -200,4 +200,34 @@ namespace Practica
 			return mayor;
 		}
 	}
+	
+	//ESTRATEGIAS PARA NUMERO
+	//-----------------------
+	
+	public class PorValorNumero : EstrategiaComparar{
+		public bool esIgual (Comparable clave1, Comparable clave2){
+			bool igual=false;
+			if (((Numero)clave1).getValor()==((Numero)clave2).getValor()){
+				igual=true;
+			}
+			
+			return igual;
+		}
+		
+		public bool esMenor (Comparable clave1, Comparable clave2){
+			bool menor=false;
+			if (((Numero)clave1).getValor() < ((Numero)clave2).getValor()){
+				menor=true;
+			}
+			return menor;
+		}
+		
+		public bool esMayor (Comparable clave1, Comparable clave2){
+			bool mayor=false;
+			if (((Numero)clave1).getValor() > ((Numero)clave2).getValor()){
+				mayor=true;
+			}
+			return mayor;
+		}
+	}
 }

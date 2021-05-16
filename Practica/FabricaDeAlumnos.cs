@@ -8,7 +8,7 @@ namespace Practica
 	/// </summary>
 	public class FabricaDeAlumnos: FabricaDeComparables
 	{	
-		
+		static Random random = new Random();
 		public override Comparable crearComparable(FabricaDeComparables fabrica){
 			Console.WriteLine("\nFABRICA DE ALUMNOS \n****************** \n1) ALEATORIO \n2) POR TECLADO \n");
 			LectorDeDatos lector=new LectorDeDatos();
@@ -31,7 +31,7 @@ namespace Practica
 		}
 		
 		public override Comparable crearAleatorio(){
-			Random random = new Random();
+			
 			string nombre;
 			int dni, legajo;
 			decimal promedio;
@@ -41,6 +41,7 @@ namespace Practica
 			legajo=random.Next(1,2000);
 			promedio=decimal.Round((Convert.ToDecimal((random.NextDouble() + random.Next(1,10)))), 2);
 			Comparable alumno = new Alumno(nombre,dni,legajo,promedio);
+			Console.WriteLine(alumno);
 			return alumno;
 		}
 		

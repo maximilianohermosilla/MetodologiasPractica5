@@ -6,6 +6,28 @@ namespace Practica
 	{
 		public static void Main(string[] args)
 		{
+			Console.WriteLine("Practica 3 - Ejercicio 6");
+			Coleccionable pila = new Pila<Comparable>();
+			Console.WriteLine("\nLISTA DE COMPARABLES \n********************** \n1) NUMERO \n2) ALUMNO \n");
+			int opcion = int.Parse(Console.ReadLine());
+			
+			llenar(pila, opcion);
+			
+			if (opcion==1){
+				cambiarEstrategia(pila, new PorValorNumero());
+			}
+			else if (opcion==2){
+				cambiarEstrategia(pila, new PorDni());
+			}
+			else{
+				Console.WriteLine("Opcion Incorrecta");
+				Console.ReadKey();
+			}
+			informar(pila, opcion);
+
+			/////////////////////////////////////////////////////////////
+			
+			Console.WriteLine("Practica 3 - Ejercicio 4 y 5");
 			
 			GeneradorDeDatosAleatorios gen = new GeneradorDeDatosAleatorios();
 			LectorDeDatos lector=new LectorDeDatos();
@@ -21,135 +43,65 @@ namespace Practica
 			Console.WriteLine(nuevo);
 		
 			
-			
-			/*Console.WriteLine("Ejercicio 8\n***********\n");
-			
-			Coleccionable pila = new Pila<Comparable>();
-			Coleccionable cola = new Cola<Comparable>();
-			Coleccionable conjunto = new Conjunto<Comparable>();
-			Diccionario<Comparable> dictionary = new Diccionario<Comparable>();
-			
-			llenarAlumnos(pila);
-			llenarAlumnos(cola);
-			llenarAlumnos(conjunto);
-			llenarAlumnos(dictionary);
-			
-			Console.WriteLine("IMPRIMO PILA\n------------");
-			imprimirElementos(pila);
-			Console.WriteLine("\nIMPRIMO COLA\n------------");
-			imprimirElementos(cola);
-			Console.WriteLine("\nIMPRIMO CONJUNTO\n----------------");
-			imprimirElementos(conjunto);
-			Console.WriteLine("\nIMPRIMO DICCIONARIO\n-------------------");
-			imprimirElementos(dictionary);
+				
+	/*llenar(coleccionable, opcion)
+	repetir 20 veces
+	comparable = fabrica.crearAleatorio(opcion)
+	coleccionable.agregar(comparable)
+	
+	informar(coleccionable, opcion)
+	imprimir (colecionable.cuantos())
+	imprimir (colecionable.minimo())
+	imprimir (colecionable.maximo())
+	comparable = fabrica.crearPorTeclado(opcion)
+	si (coleccionable.contiene(comparable))
+	imprimir(“El elemento leído está en la colección”)
+	sino
+	imprimir(“El elemento leído no está en la colección”)
+	Adapte, modifique y compruebe el correcto funcionamiento de los métodos main de los ejercicios 9 y 17 de la práctica 1. Unifique ambos métodos en un único main.
+	*/
 			
 			
-			
-			Console.WriteLine("\nEjercicio 10\n***********\n");
-			
-			Coleccionable pila2 = new Pila<Comparable>();
-			llenarAlumnos(pila2);
-			Console.WriteLine("\nIMPRIMO PILA POR NOMBRE\n-----------------------");
-			cambiarEstrategia(pila2, new PorNombre());
-			informar(pila2);
-			
-			Console.WriteLine("\nIMPRIMO PILA POR LEGAJO\n-----------------------");
-			cambiarEstrategia(pila2, new PorLegajo());
-			informar(pila2);
-			
-			Console.WriteLine("\nIMPRIMO PILA POR PROMEDIO\n-----------------------");
-			cambiarEstrategia(pila2, new PorPromedio());
-			informar(pila2);
-			
-			Console.WriteLine("\nIMPRIMO PILA POR DNI\n-----------------------");
-			cambiarEstrategia(pila2, new PorDni());
-			informar(pila2);
-			
-			Console.WriteLine("\nIMPRIMO ELEMENTOS\n-----------------------");
-			imprimirElementos(pila2);
-			
-			/*
-			Coleccionable cola = new Cola<Comparable>();
-			Coleccionable pila = new Pila<Comparable>();
-					
-			llenar(cola);
-			Console.WriteLine("Informar Cola: \n--------------");
-			informar(cola);
-			
-			llenar(pila);
-			Console.WriteLine("\nInformar Pila: \n--------------");
-			informar(pila);
-						
-			
-			ColeccionMultiple multiple = new ColeccionMultiple(((Pila<Comparable>)pila), ((Cola<Comparable>)cola));
-			Console.WriteLine("\nInformar ColeccionMultiple: \n---------------------------");
-			informar(multiple);
-			
-			imprimirElementos(pila);
-			imprimirElementos(cola);
-			
-			Coleccionable colaPersonas = new Cola<Comparable>();
-			llenarPersonas(colaPersonas);
-			Coleccionable pilaPersonas = new Pila<Comparable>();
-			llenarPersonas(pilaPersonas);
-			
-			
-			ColeccionMultiple multiplePersonas = new ColeccionMultiple(((Pila<Comparable>)pilaPersonas), ((Cola<Comparable>)colaPersonas));
-			Console.WriteLine("\nInformar ColeccionMultiplePersonas: \n-----------------------------------");
-			informar(multiplePersonas);
-			
-			imprimirElementos(pilaPersonas);
-			imprimirElementos(colaPersonas);
-			
-			Coleccionable colaAlumnos = new Cola<Comparable>();
-			llenarAlumnos(colaAlumnos);
-			Coleccionable pilaAlumnos = new Pila<Comparable>();
-			llenarAlumnos(pilaAlumnos);
-			
-			ColeccionMultiple multipleAlumnos = new ColeccionMultiple(((Pila<Comparable>)pilaAlumnos), ((Cola<Comparable>)colaAlumnos));
-			Console.WriteLine("\nInformar ColeccionMultipleAlumnos: \n----------------------------------");
-			informar(multipleAlumnos);	
-			
-			imprimirElementos(pilaAlumnos);
-			imprimirElementos(colaAlumnos);
-
-			Diccionario<Comparable> dictionary = new Diccionario<Comparable>();
-			Numero number = new Numero(3);
-			Numero number2 = new Numero(2);
-			
-			dictionary.agregarClaveValor(number,"avion");
-			dictionary.agregarClaveValor(number,"casa");
-			dictionary.agregarClaveValor(number2,"perro");
-
-			ClaveValor valorVacio = new ClaveValor("gato");
-			dictionary.agregar(valorVacio);
-			
-			
-			Console.WriteLine("\n");
-			
-			
-			Console.WriteLine("\nInformar Diccionario: \n---------------------");
-			informar(dictionary);
-						
-			Console.WriteLine("\nIngrese clave: ");
-			int insertNum = int.Parse(Console.ReadLine());
-			Numero checkClave = new Numero(insertNum);
-			Console.WriteLine(dictionary.valorDe(checkClave));
-			
-			imprimirElementos(dictionary);
-			*/
-			
-			Console.ReadKey();
 		}
 		
-		public static void llenar(Coleccionable lista){
+		public static void llenar(Coleccionable lista, int opcion){
+			Random random = new Random();
+			for (int x=1; x<=20 ; x++){
+				Comparable comp= FabricaDeComparables.crearAleatorio(opcion);
+				((Coleccionable)lista).agregar(comp);
+			}
+		}
+		
+		public static void informar(Coleccionable lista, int opcion){
+			try{
+			Console.Write("Cantidad de elementos: ");
+			Console.WriteLine(lista.cuantos());
+			Console.Write("Mínimo: ");
+			Console.WriteLine((lista.menor()).informar());
+			Console.Write("Máximo: ");
+			Console.WriteLine(lista.mayor().informar());
+			Comparable compTemp = FabricaDeComparables.crearPorTeclado(opcion);
+			if (lista.contiene(compTemp)){
+				Console.WriteLine("El elemento leído está en la colección");
+			}
+			else{
+				Console.WriteLine("El elemento leído NO está en la colección");
+			}
+			}
+			catch(FormatException){
+				Console.WriteLine("* Numero invalido *");
+				Console.ReadKey(true);
+			}
+		}
+		
+		/*public static void llenar(Coleccionable lista){
 			Random random = new Random();
 			for (int x=1; x<=20 ; x++){
 				Comparable numero = new Numero(random.Next(1,100));
 				((Coleccionable)lista).agregar(numero);
-			}
+			}		
 		}
-		
+			
 		public static void informar(Coleccionable lista){
 			try{
 			Console.Write("Cantidad de elementos: ");
@@ -158,20 +110,20 @@ namespace Practica
 			Console.WriteLine((lista.menor()).informar());
 			Console.Write("Máximo: ");
 			Console.WriteLine(lista.mayor().informar());
-			/*Console.Write("Ingrese número: ");
+			Console.Write("Ingrese número: ");
 			string num = Console.ReadLine();
 			if (lista.contieneNumero(num)){
 				Console.WriteLine("El elemento leído está en la colección");
 			}
 			else{
 				Console.WriteLine("El elemento leído NO está en la colección");
-			}*/
+			}
 			}
 			catch(FormatException){
 				Console.WriteLine("* Numero invalido *");
 				Console.ReadKey(true);
 			}
-		}
+		}*/
 		
 		public static void llenarPersonas(Coleccionable lista){
 			

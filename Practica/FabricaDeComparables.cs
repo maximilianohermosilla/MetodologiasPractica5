@@ -25,6 +25,34 @@ namespace Practica
 			return fabrica.crearComparable(fabrica);
 		}
 		
+		public static Comparable crearAleatorio(int tipoComparable){
+			FabricaDeComparables fabrica = null;
+			if (tipoComparable == num){
+				fabrica = new FabricaDeNumeros();
+			}
+			else if (tipoComparable == alum){
+				fabrica = new FabricaDeAlumnos();
+			}
+			else{
+				return null;
+			}
+			return fabrica.crearAleatorio();
+		}
+		
+		public static Comparable crearPorTeclado(int tipoComparable){
+			FabricaDeComparables fabrica = null;
+			if (tipoComparable == num){
+				fabrica = new FabricaDeNumeros();
+			}
+			else if (tipoComparable == alum){
+				fabrica = new FabricaDeAlumnos();
+			}
+			else{
+				return null;
+			}
+			return fabrica.crearPorTeclado();
+		}
+		
 		public abstract Comparable crearComparable(FabricaDeComparables fact);
 		public abstract Comparable crearAleatorio();
 		public abstract Comparable crearPorTeclado();

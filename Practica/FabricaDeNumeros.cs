@@ -11,6 +11,7 @@ namespace Practica
 		public const int aleatorio=1;
 		public const int porTeclado=2;
 		
+		static Random random = new Random();
 				
 		public override Comparable crearComparable(FabricaDeComparables fabrica){
 			Console.WriteLine("\nFABRICA DE NUMEROS \n****************** \n1) ALEATORIO \n2) POR TECLADO \n");
@@ -31,7 +32,6 @@ namespace Practica
 		}
 		
 		override public Comparable crearAleatorio(){
-			Random random = new Random();
 			Numero numRandom = new Numero();
 			numRandom.setValor(random.Next(1,100));
 			return numRandom;
