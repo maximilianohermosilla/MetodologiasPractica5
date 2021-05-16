@@ -8,10 +8,16 @@ namespace Practica
 		{
 			Console.WriteLine("Practica 3 - Ejercicio 6");
 			Coleccionable pila = new Pila<Comparable>();
+			Coleccionable cola = new Cola<Comparable>();
+			ColeccionMultiple multiple = new ColeccionMultiple(((Pila<Comparable>)pila), ((Cola<Comparable>)cola));
+			
+
 			Console.WriteLine("\nLISTA DE COMPARABLES \n********************** \n1) NUMERO \n2) ALUMNO \n");
 			int opcion = int.Parse(Console.ReadLine());
 			
 			llenar(pila, opcion);
+			llenar(cola,opcion);
+			
 			
 			if (opcion==1){
 				cambiarEstrategia(pila, new PorValorNumero());
@@ -23,8 +29,12 @@ namespace Practica
 				Console.WriteLine("Opcion Incorrecta");
 				Console.ReadKey();
 			}
+			Console.WriteLine("\nInformo Pila\n************\n");
 			informar(pila, opcion);
-
+			Console.WriteLine("\nInformo Cola\n************\n");
+			informar(cola, opcion);
+			Console.WriteLine("\nInformo Multiple\n************\n");
+			informar(multiple, opcion);
 			/////////////////////////////////////////////////////////////
 			
 			Console.WriteLine("Practica 3 - Ejercicio 4 y 5");
