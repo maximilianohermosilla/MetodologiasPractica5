@@ -1,0 +1,6 @@
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\bin\Debug\Practica.exe.config
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\bin\Debug\Practica.exe
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\bin\Debug\Practica.pdb
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.exe
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.pdb
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.csprojResolveAssemblyReference.cache
