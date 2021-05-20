@@ -3,9 +3,9 @@ using System;
 
 namespace Practica
 {
-	/// <summary>
-	/// Description of LectorDeDatos.
-	/// </summary>
+	
+	/// Practica 3 - Ejercicio 3 
+	
 	public class LectorDeDatos
 	{
 		public LectorDeDatos()

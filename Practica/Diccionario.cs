@@ -18,8 +18,8 @@ namespace Practica
 			return this.datos.Count;
 		}
 		
-		public Comparable actual(){
-			return datos[cuantos()-1];
+		public Comparable actual(int indice){
+			return (Comparable)((ClaveValor)datos[indice]).getValor();
 		}
 		
 		public Comparable menor(){
@@ -130,18 +130,19 @@ namespace Practica
 		
 		public Iterador crearIterador(){
 			//Console.WriteLine("\nCreo iterador");
-			it= new IteradorDiccionario<T>(this);
+			if (it==null){
+				it= new IteradorDiccionario<T>(this);}
 			return it;
 		}
 		
 		public void recorrer(){
-			//Console.WriteLine("Recorro iterador");
+			if (it == null){
+				this.crearIterador();
+			}
 			if (this.datos.Count>0){
 				while(!it.fin()){
-					foreach(Comparable elem in datos){
-						Console.WriteLine(elem);
+						Console.WriteLine(it.actual());
 						it.siguiente();
-				    }
 				}
 			}
 		}

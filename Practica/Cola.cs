@@ -87,6 +87,9 @@ namespace Practica
 		
 		public void recorrer(){
 			//Console.WriteLine("Recorro iterador");
+			if (it == null){
+				it= new IteradorCola<T>(this);
+			}
 			it.siguiente();
 		}
 		

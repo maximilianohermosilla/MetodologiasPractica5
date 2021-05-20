@@ -3,9 +3,9 @@ using System;
 
 namespace Practica
 {
-	/// <summary>
-	/// Description of FabricaDeVendedores.
-	/// </summary>
+	
+	// Practica 3 - Ejercicio 9	
+	
 	public class FabricaDeVendedores: FabricaDeComparables
 	{	
 		static Random random = new Random();

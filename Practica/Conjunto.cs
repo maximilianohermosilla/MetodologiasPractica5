@@ -16,8 +16,8 @@ namespace Practica
 			return datos.Count;
 		}
 		
-		public Comparable actual(){
-			return datos[cuantos()-1];
+		public Comparable actual(int indice){
+			return datos[indice];
 		}
 		
 		public Comparable menor(){
@@ -82,6 +82,9 @@ namespace Practica
 		
 		public void recorrer(){
 			//Console.WriteLine("Recorro iterador");
+			if (it == null){
+				it= new IteradorConjunto<T>(this);
+			}
 			if (this.datos.Count>0){
 				while(!it.fin()){
 					foreach(Comparable elem in datos){

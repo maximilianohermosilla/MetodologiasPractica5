@@ -89,6 +89,9 @@ namespace Practica
 		
 		public void recorrer(){
 			//Console.WriteLine("Recorro iterador");
+			if (it == null){
+				it= new IteradorPila<T>(this);
+			}
 			it.siguiente();
 		}
 		

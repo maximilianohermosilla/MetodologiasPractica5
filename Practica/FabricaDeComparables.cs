@@ -2,9 +2,9 @@
 
 namespace Practica
 {
-	/// <summary>
-	/// Description of FabricaDeComparables.
-	/// </summary>
+	
+	/// Practica 3 - Ejercicio 4
+	
 	public abstract class FabricaDeComparables
 	{
 		public const int num=1;

@@ -261,4 +261,33 @@ namespace Practica
 		}
 	}
 	
+	public class PorDniVendedor: EstrategiaComparar{
+		public bool esIgual (Comparable clave1, Comparable clave2){
+			bool igual=false;
+			if (((Vendedor)clave1).getDni() == ((Vendedor)clave2).getDni()){
+				igual=true;
+			}
+			
+			return igual;
+		}
+		
+		public bool esMenor (Comparable clave1, Comparable clave2){
+			bool menor=false;
+			if (((Vendedor)clave1).getDni() < ((Vendedor)clave2).getDni()){
+				menor=true;
+			}
+			return menor;
+		}
+		
+		public bool esMayor (Comparable clave1, Comparable clave2){
+			bool mayor=false;
+			if (((Vendedor)clave1).getDni() > ((Vendedor)clave2).getDni()){
+				mayor=true;
+			}
+			return mayor;
+		}
+	}
+	
+	
+	
 }

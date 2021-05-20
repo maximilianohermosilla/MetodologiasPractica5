@@ -6,15 +6,30 @@ namespace Practica
 	{
 		public static void Main(string[] args)
 		{
+			// Practica 3 - Ejercicios 2, 3, 4 y 5
+						
 			
-			Console.WriteLine("Practica 3 - Ejercicio 8");
+			Console.WriteLine("Practica 3 - Ejercicios 2, 3, 4 y 5");
 			
+			GeneradorDeDatosAleatorios gen = new GeneradorDeDatosAleatorios();
+			LectorDeDatos lector=new LectorDeDatos();
 			
+			Console.WriteLine("NUMERO ALEATORIO ENTRE 0 Y ...: ");
+			Console.WriteLine(gen.numeroAleatorio(lector.numeroPorTeclado()));
+			Console.WriteLine("STRING ALEATORIO - CANTIDAD DE CARACTERES: ");
+			Console.WriteLine(gen.stringAleatorio(lector.numeroPorTeclado()));
 			
+			Console.WriteLine("\nFABRICA DE COMPARABLES \n********************** \n1) NUMERO \n2) ALUMNO \n");
+			int tipoComparable = int.Parse(Console.ReadLine());
+			Comparable nuevo = FabricaDeComparables.crearComparables(tipoComparable);
+			Console.WriteLine(nuevo);
 			
+					
 			//********************************************************//
+			// Practica 3 - Ejercicio 6
+			// Practica 3 - Ejercicio 9
 			
-			Console.WriteLine("Practica 3 - Ejercicio 6");
+			Console.WriteLine("Practica 3 - Ejercicios 6 y 9");
 			
 			Coleccionable pila = new Pila<Comparable>();
 			Coleccionable cola = new Cola<Comparable>();
@@ -50,28 +65,46 @@ namespace Practica
 			
 			
 			//****************************************************************************//
+			// Practica 3 - Ejercicio 13
 			
-			Console.WriteLine("Practica 3 - Ejercicio 4 y 5");
 			
-			GeneradorDeDatosAleatorios gen = new GeneradorDeDatosAleatorios();
-			LectorDeDatos lector=new LectorDeDatos();
+			Console.WriteLine("\nPractica 3 - Ejercicio 13\n");
 			
-			Console.WriteLine("NUMERO ALEATORIO ENTRE 0 Y ...: ");
-			Console.WriteLine(gen.numeroAleatorio(lector.numeroPorTeclado()));
-			Console.WriteLine("STRING ALEATORIO - CANTIDAD DE CARACTERES: ");
-			Console.WriteLine(gen.stringAleatorio(lector.numeroPorTeclado()));
+			Coleccionable conjunto = new Conjunto<Comparable>();
 			
-			Console.WriteLine("\nFABRICA DE COMPARABLES \n********************** \n1) NUMERO \n2) ALUMNO \n");
-			int tipoComparable = int.Parse(Console.ReadLine());
-			Comparable nuevo = FabricaDeComparables.crearComparables(tipoComparable);
-			Console.WriteLine(nuevo);
-		
+			Console.WriteLine("LISTA DE VENDEDORES");
+			llenar(conjunto,3);
+			cambiarEstrategia(conjunto, new PorDniVendedor());
+			Console.WriteLine("\nJORNADA DE VENTAS");
+			jornadaDeVentas(conjunto);
+			
+			
+			//****************************************************************************//
+			// Practica 3 - Ejercicio 14
+			
+			
+			Console.WriteLine("\nPractica 3 - Ejercicio 14\n");
+			
+			Coleccionable conjuntoVendedores = new Conjunto<Comparable>();
+			llenar(conjuntoVendedores,3);
+			Gerente gerente = new Gerente();
+			agregarObservadorColeccion(conjuntoVendedores, gerente);
+			Console.WriteLine("\nJORNADA DE VENTAS");
+			jornadaDeVentas(conjuntoVendedores);
+			Console.WriteLine("\nLISTA MEJORES VENDEDORES: ");
+			gerente.cerrar();
+			
+			
+			Console.ReadKey();
 		}
 		
 		
 		//    METODOS    //
 		//***************//
 		
+		
+	
+		// Practica 3 - Ejercicio 6
 		
 		public static void llenar(Coleccionable lista, int opcion){
 			Random random = new Random();
@@ -80,6 +113,8 @@ namespace Practica
 				((Coleccionable)lista).agregar(comp);
 			}
 		}
+		
+		// Practica 3 - Ejercicio 6
 		
 		public static void informar(Coleccionable lista, int opcion){
 			try{
@@ -102,6 +137,41 @@ namespace Practica
 				Console.ReadKey(true);
 			}
 		}
+		
+			
+		// Practica 3 - Ejercicio 13
+		
+		public static void jornadaDeVentas(Coleccionable lista){
+			Random random= new Random();
+			Iterador ite = ((Iterable)lista).crearIterador();
+			while(! ite.fin()){
+				double monto=random.Next(1,7000);
+				Console.Write((ite.actual()).ToString() + "\nVENTA: ");
+				((Vendedor)(ite.actual())).venta(monto);
+				if (monto>5000){
+					((Vendedor)(ite.actual())).notificar(monto);
+				}
+				ite.siguiente();
+			}
+		}
+		
+		// Practica 3 - Ejercicio 14
+		
+		public static void agregarObservadorColeccion(Coleccionable lista, Observador observer){
+			Iterador ite = ((Iterable)lista).crearIterador();
+			while(!ite.fin()){
+				((Observado)(ite.actual())).agregarObservador(observer);
+				ite.siguiente();
+			}
+		}
+			
+			
+		
+		///////////////////////////////////////////////////////////////////////////////////
+		
+				
+		
+		// PRACTICA 2
 		
 		public static void llenarPersonas(Coleccionable lista){
 			

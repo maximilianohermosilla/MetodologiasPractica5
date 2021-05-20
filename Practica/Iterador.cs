@@ -31,8 +31,8 @@ namespace Practica
 		}
 		
 		public void siguiente(){
-			while (!this.fin()){
-				Console.WriteLine(pila.pop());	
+			if (!this.fin()){
+				pila.pop();	
 			}
 		}
 		
@@ -59,8 +59,8 @@ namespace Practica
 		}
 		
 		public void siguiente(){
-			while (!this.fin()){
-				Console.WriteLine(cola.pop());	
+			if (!this.fin()){
+				cola.pop();	
 			}
 		}
 		
@@ -80,7 +80,7 @@ namespace Practica
 		}
 		
 		public Comparable actual(){
-			return conj.actual();
+			return conj.actual(indice);
 		}
 		
 		public void siguiente(){
@@ -102,7 +102,7 @@ namespace Practica
 			indice=0;
 		}
 		public Comparable actual(){
-			return dict.actual();
+			return dict.actual(indice);
 		}
 		
 		public void siguiente(){

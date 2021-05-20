@@ -2,9 +2,9 @@
 
 namespace Practica
 {
-	/// <summary>
-	/// Description of GeneradorDeDatosAleatorios.
-	/// </summary>
+	
+	/// Practica 3 - Ejercicio 2
+	
 	public class GeneradorDeDatosAleatorios
 	{
 		public GeneradorDeDatosAleatorios()

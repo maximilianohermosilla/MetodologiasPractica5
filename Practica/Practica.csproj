@@ -62,10 +62,13 @@
     <Compile Include="FabricaDeNumeros.cs" />
     <Compile Include="FabricaDeVendedores.cs" />
     <Compile Include="GeneradorDeDatosAleatorios.cs" />
+    <Compile Include="Gerente.cs" />
     <Compile Include="Iterable.cs" />
     <Compile Include="Iterador.cs" />
     <Compile Include="LectorDeDatos.cs" />
     <Compile Include="Numero.cs" />
+    <Compile Include="Observado.cs" />
+    <Compile Include="Observador.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Pila.cs" />
     <Compile Include="Program.cs" />
