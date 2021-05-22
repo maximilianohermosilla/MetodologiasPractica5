@@ -84,6 +84,10 @@ namespace Practica
 			return string.Format("NOMBRE: {0} , CALIFICACION: {1}", nombre, calificacion);
 		}
 		
+		public void setCalificacion(int calificacion)
+        {
+			this.calificacion = calificacion;
+        }
  
 	}
 }

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
+    <Compile Include="AlumnoAdapter.cs" />
     <Compile Include="AlumnoMuyEstudioso.cs" />
     <Compile Include="ClaveValor.cs" />
     <Compile Include="Cola.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Iterable.cs" />
     <Compile Include="Iterador.cs" />
     <Compile Include="LectorDeDatos.cs" />
+    <Compile Include="MDPI.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Observado.cs" />
     <Compile Include="Observador.cs" />

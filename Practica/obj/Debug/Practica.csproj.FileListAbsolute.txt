@@ -3,4 +3,5 @@ F:\GitHub\MetodologiasDeProgramación\Practica\Practica\bin\Debug\Practica.exe
 F:\GitHub\MetodologiasDeProgramación\Practica\Practica\bin\Debug\Practica.pdb
 F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.exe
 F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.pdb
-F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.csprojResolveAssemblyReference.cache
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.csprojAssemblyReference.cache
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.csproj.CoreCompileInputs.cache
