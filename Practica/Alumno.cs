@@ -7,7 +7,8 @@ namespace Practica
 	/// </summary>
 	public class Alumno: Persona
 	{
-		private int legajo;
+		
+		private int legajo, calificacion;
 		private decimal promedio;
 		EstrategiaComparar comparador = new PorDni();
 		
@@ -40,6 +41,13 @@ namespace Practica
 			return promedio;
 		}
 		
+		public new string informar(){
+			return this.ToString();
+		}
+		
+		
+		// METODOS COMPARABLE //
+		
 		public override bool sosIgual(Comparable obj){
 			return comparador.esIgual(this, (Alumno)obj);
 		}
@@ -52,18 +60,30 @@ namespace Practica
 			return comparador.esMayor(this, (Alumno)obj);
 		}
 		
-		public new string informar(){
-			return this.ToString();
-		}
+		//-------------------//
 		
 		public override string ToString()
 		{
 			return string.Format("LEGAJO:{0} , DNI:{1} , NOMBRE:{2} , PROMEDIO:{3}", legajo,dni,nombre,promedio);
 		}
 		
+		// METODO COMPARAR //
+		
 		public void cambiarComparador(EstrategiaComparar comp){
 			comparador=comp;
 		}
+		
+		// Practica - Ejercicio 1 //
+		
+		public int responderPregunta (int pregunta){
+			Random aleatorio = new Random();
+			return (aleatorio.Next(1,3));
+		}
+		
+		public string mostrarCalificacion(){
+			return string.Format("NOMBRE: {0} , CALIFICACION: {1}", nombre, calificacion);
+		}
+		
  
 	}
 }
