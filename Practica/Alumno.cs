@@ -42,7 +42,12 @@ namespace Practica
 		public decimal getPromedio(){
 			return promedio;
 		}
-		
+
+		public int getCalificacion()
+		{
+			return calificacion;
+		}
+
 		public new string informar(){
 			return this.ToString();
 		}

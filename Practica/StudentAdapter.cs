@@ -24,6 +24,11 @@ namespace Practica
             return estudiante.getNombre();
         }
 
+        public int getCalification()
+        {
+            return estudiante.getCalificacion();
+        }
+
         public int yourAnswerIs(int question)
         {
             if (muyEstudioso)
@@ -47,17 +52,17 @@ namespace Practica
 
         public bool equals(Student student)
         {
-            return true;
+            return this.getCalification() == ((StudentAdapter)student).getCalification();
         }
 
         public bool lessThan(Student student)
         {
-            return false;
+            return this.getCalification() < ((StudentAdapter)student).getCalification();
         }
 
         public bool greaterThan(Student student)
         {
-            return false;
+            return this.getCalification() > ((StudentAdapter)student).getCalification();
         }
 
     }
