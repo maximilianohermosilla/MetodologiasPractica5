@@ -8,10 +8,12 @@ namespace Practica
 	public class Alumno: Persona
 	{
 		
-		private int legajo, calificacion;
-		private decimal promedio;
+		protected int legajo, calificacion;
+		protected decimal promedio;
 		EstrategiaComparar comparador = new PorDni();
-		
+		static Random aleatorio = new Random();
+
+
 		public Alumno(){
 		}
 		
@@ -76,7 +78,6 @@ namespace Practica
 		// Practica - Ejercicio 1 //
 		
 		public int responderPregunta (int pregunta){
-			Random aleatorio = new Random();
 			return (aleatorio.Next(1,3));
 		}
 		

@@ -7,12 +7,16 @@ namespace Practica
 	
 	public class AlumnoMuyEstudioso: Alumno
 	{
-		public AlumnoMuyEstudioso()
+		public AlumnoMuyEstudioso(Alumno alumno)
 		{
+            this.nombre = alumno.getNombre();
+			this.legajo = alumno.getLegajo();
+			this.promedio = alumno.getPromedio();
+			this.dni = alumno.getDni();
 		}
 		
 		public new int responderPregunta(int pregunta){
-			return (pregunta%3);
+			return (pregunta % 3);
 		}
 	}
 }

@@ -76,6 +76,7 @@
     <Compile Include="Pila.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentAdapter.cs" />
     <Compile Include="Vendedor.cs" />
   </ItemGroup>
   <ItemGroup>

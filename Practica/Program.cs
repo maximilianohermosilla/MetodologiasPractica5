@@ -4,97 +4,36 @@ namespace Practica
 {
 	class Program
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="args"></param>
 		public static void Main(string[] args)
 		{
-			// Practica 3 - Ejercicios 2, 3, 4 y 5
-						
-			
-			Console.WriteLine("Practica 3 - Ejercicios 2, 3, 4 y 5");
-			
-			GeneradorDeDatosAleatorios gen = new GeneradorDeDatosAleatorios();
-			LectorDeDatos lector=new LectorDeDatos();
-			
-			Console.WriteLine("NUMERO ALEATORIO ENTRE 0 Y ...: ");
-			Console.WriteLine(gen.numeroAleatorio(lector.numeroPorTeclado()));
-			Console.WriteLine("STRING ALEATORIO - CANTIDAD DE CARACTERES: ");
-			Console.WriteLine(gen.stringAleatorio(lector.numeroPorTeclado()));
-			
-			Console.WriteLine("\nFABRICA DE COMPARABLES \n********************** \n1) NUMERO \n2) ALUMNO \n");
-			int tipoComparable = int.Parse(Console.ReadLine());
-			Comparable nuevo = FabricaDeComparables.crearComparables(tipoComparable);
-			Console.WriteLine(nuevo);
-			
-					
-			//********************************************************//
-			// Practica 3 - Ejercicio 6
-			// Practica 3 - Ejercicio 9
-			
-			Console.WriteLine("Practica 3 - Ejercicios 6 y 9");
-			
-			Coleccionable pila = new Pila<Comparable>();
-			Coleccionable cola = new Cola<Comparable>();
-			ColeccionMultiple multiple = new ColeccionMultiple(((Pila<Comparable>)pila), ((Cola<Comparable>)cola));
-			
+			// Practica 4 - Ejercicio 4 //
 
-			Console.WriteLine("\nLISTA DE COMPARABLES \n********************** \n1) NUMERO \n2) ALUMNO \n3) VENDEDOR\n");
-			int opcion = int.Parse(Console.ReadLine());
+			Teacher profesor = new Teacher();
+			FabricaDeAlumnos fabricaAlumnos = new FabricaDeAlumnos();
+			Alumno alumno;
+			AlumnoMuyEstudioso alumnoEst;
+			StudentAdapter estudiante;
+			for (int i = 0; i < 20; i++)
+            {
+				alumno = (Alumno)fabricaAlumnos.crearAleatorio();
+				if ((i%2) == 0)
+                {
+					estudiante = new StudentAdapter(alumno);
+				}
+                else
+                {
+					alumnoEst = new AlumnoMuyEstudioso(alumno);
+					estudiante = new StudentAdapter(alumnoEst);
+				}
+				profesor.goToClass(estudiante);
+            }
 			
-			llenar(pila, opcion);
-			llenar(cola,opcion);
-			
-			
-			if (opcion==1){
-				cambiarEstrategia(pila, new PorValorNumero());
-			}
-			else if (opcion==2){
-				cambiarEstrategia(pila, new PorDni());
-			}
-			else if (opcion==3){
-				cambiarEstrategia(pila, new PorBonus());
-			}
-			else{
-				Console.WriteLine("Opcion Incorrecta");
-				Console.ReadKey();
-			}
-			Console.WriteLine("\nInformo Pila\n************\n");
-			informar(pila, opcion);
-			Console.WriteLine("\nInformo Cola\n************\n");
-			informar(cola, opcion);
-			Console.WriteLine("\nInformo Multiple\n************\n");
-			informar(multiple, opcion);
-			
-			
-			//****************************************************************************//
-			// Practica 3 - Ejercicio 13
-			
-			
-			Console.WriteLine("\nPractica 3 - Ejercicio 13\n");
-			
-			Coleccionable conjunto = new Conjunto<Comparable>();
-			
-			Console.WriteLine("LISTA DE VENDEDORES");
-			llenar(conjunto,3);
-			cambiarEstrategia(conjunto, new PorDniVendedor());
-			Console.WriteLine("\nJORNADA DE VENTAS");
-			jornadaDeVentas(conjunto);
-			
-			
-			//****************************************************************************//
-			// Practica 3 - Ejercicio 14
-			
-			
-			Console.WriteLine("\nPractica 3 - Ejercicio 14\n");
-			
-			Coleccionable conjuntoVendedores = new Conjunto<Comparable>();
-			llenar(conjuntoVendedores,3);
-			Gerente gerente = new Gerente();
-			agregarObservadorColeccion(conjuntoVendedores, gerente);
-			Console.WriteLine("\nJORNADA DE VENTAS");
-			jornadaDeVentas(conjuntoVendedores);
-			Console.WriteLine("\nLISTA MEJORES VENDEDORES: ");
-			gerente.cerrar();
-			
-			
+			profesor.teachingAClass();
+
 			Console.ReadKey();
 		}
 		

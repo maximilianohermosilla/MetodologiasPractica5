@@ -3,9 +3,9 @@ using System;
 
 namespace Practica
 {
-	/// <summary>
-	/// Description of AlumnoAdapter.
-	/// </summary>
+	
+	// Practica 4 - Ejercicio 3 //
+
 	public class AlumnoAdapter: Alumno
 	{
 
