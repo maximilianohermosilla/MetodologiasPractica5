@@ -24,11 +24,6 @@ namespace Practica
             return estudiante.getNombre();
         }
 
-        public int getCalification()
-        {
-            return estudiante.getCalificacion();
-        }
-
         public int yourAnswerIs(int question)
         {
             if (muyEstudioso)
@@ -48,6 +43,14 @@ namespace Practica
         public string showResult()
         {
             return estudiante.mostrarCalificacion();
+        }
+
+        // Practica 4 - Ejercicio 5
+
+
+        public int getCalification()
+        {
+            return estudiante.getCalificacion();
         }
 
         public bool equals(Student student)

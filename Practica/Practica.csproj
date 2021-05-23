@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdicionalDecorator.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="AlumnoAdapter.cs" />
     <Compile Include="AlumnoMuyEstudioso.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="ColeccionMultiple.cs" />
     <Compile Include="Comparable.cs" />
     <Compile Include="Conjunto.cs" />
+    <Compile Include="DecoratorCalificacion.cs" />
     <Compile Include="Diccionario.cs" />
     <Compile Include="EstrategiaComparar.cs" />
     <Compile Include="FabricaDeAlumnos.cs" />

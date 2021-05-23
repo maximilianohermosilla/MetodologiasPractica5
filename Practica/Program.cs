@@ -17,12 +17,23 @@ namespace Practica
 			Alumno alumno;
 			AlumnoMuyEstudioso alumnoEst;
 			StudentAdapter estudiante;
+
+			DecoratorCalificacion decorador;
+
 			for (int i = 0; i < 20; i++)
             {
 				alumno = (Alumno)fabricaAlumnos.crearAleatorio();
 				if ((i%2) == 0)
                 {
 					estudiante = new StudentAdapter(alumno);
+					decorador = new Decorator(alumno);
+					LegajoDecorator legDec = new LegajoDecorator(decorador, alumno);
+					LetrasDecorator letrDec = new LetrasDecorator(legDec, alumno);
+					NumeroDecorator numDec = new NumeroDecorator(letrDec, alumno);
+					PromocionDecorator promDec = new PromocionDecorator(letrDec, alumno);
+					CuadroDecorator cuadroDec = new CuadroDecorator(promDec, alumno);
+					Console.WriteLine("\nCALIFICACION DECORATOR:");
+					Console.WriteLine(cuadroDec.mostrarCalificacion());
 				}
                 else
                 {

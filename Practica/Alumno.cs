@@ -87,12 +87,28 @@ namespace Practica
 		}
 		
 		public string mostrarCalificacion(){
-			return string.Format("NOMBRE: {0} , CALIFICACION: {1}", nombre, calificacion);
+			return string.Format("{0}	{1}",nombre, calificacion);
 		}
 		
 		public void setCalificacion(int calificacion)
         {
 			this.calificacion = calificacion;
+        }
+
+		public string getNotaLetras()
+        {
+			string[] notas = new string[] { "CERO", "UNO", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE", "DIEZ" };
+			return notas[calificacion];
+        }
+
+		public string getPromocion()
+        {
+			if (calificacion >= 7)
+				return "PROMOCION";
+			else if (calificacion < 7 & calificacion >= 4)
+				return "APROBADO";
+			else
+				return "DESAPROBADO";
         }
  
 	}
