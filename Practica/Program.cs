@@ -12,13 +12,14 @@ namespace Practica
 		{
 			// Practica 4 - Ejercicio 4 //
 
+			Console.WriteLine("Practica 4 - Ejercicio 4");
+			Console.WriteLine("************************\n");
+
 			Teacher profesor = new Teacher();
 			FabricaDeAlumnos fabricaAlumnos = new FabricaDeAlumnos();
 			Alumno alumno;
 			AlumnoMuyEstudioso alumnoEst;
 			StudentAdapter estudiante;
-
-			DecoratorCalificacion decorador;
 
 			for (int i = 0; i < 20; i++)
             {
@@ -26,14 +27,6 @@ namespace Practica
 				if ((i%2) == 0)
                 {
 					estudiante = new StudentAdapter(alumno);
-					decorador = new Decorator(alumno);
-					LegajoDecorator legDec = new LegajoDecorator(decorador, alumno);
-					LetrasDecorator letrDec = new LetrasDecorator(legDec, alumno);
-					NumeroDecorator numDec = new NumeroDecorator(letrDec, alumno);
-					PromocionDecorator promDec = new PromocionDecorator(letrDec, alumno);
-					CuadroDecorator cuadroDec = new CuadroDecorator(promDec, alumno);
-					Console.WriteLine("\nCALIFICACION DECORATOR:");
-					Console.WriteLine(cuadroDec.mostrarCalificacion());
 				}
                 else
                 {
@@ -42,8 +35,45 @@ namespace Practica
 				}
 				profesor.goToClass(estudiante);
             }
-			
+
 			profesor.teachingAClass();
+
+			
+
+			// Practica 4 - Ejercicio 6 //
+
+
+			Console.WriteLine("Practica 4 - Ejercicio 6");
+			Console.WriteLine("************************\n");
+
+			Alumno alumnoDec = (Alumno)fabricaAlumnos.crearAleatorio();
+			alumnoDec.setCalificacion(6);
+
+			DecoratorCalificacion decorador = new Decorator(alumnoDec);
+			Console.WriteLine("\nDECORATOR:");
+			Console.WriteLine(decorador.mostrarCalificacion());
+
+			LegajoDecorator legDec = new LegajoDecorator(decorador, alumnoDec);
+			Console.WriteLine("\nLEGAJO DECORATOR:");
+			Console.WriteLine(legDec.mostrarCalificacion());
+
+			LetrasDecorator letrDec = new LetrasDecorator(legDec, alumnoDec);
+			Console.WriteLine("\nLETRAS DECORATOR:");
+			Console.WriteLine(letrDec.mostrarCalificacion());
+
+			PromocionDecorator promDec = new PromocionDecorator(letrDec, alumnoDec);
+			Console.WriteLine("\nPROMOCION DECORATOR:");
+			Console.WriteLine(promDec.mostrarCalificacion());
+
+			NumeroDecorator numDec = new NumeroDecorator(promDec, alumnoDec);
+			Console.WriteLine("\nNUMERO DECORATOR:");
+			Console.WriteLine(numDec.mostrarCalificacion());
+
+			CuadroDecorator cuadroDec = new CuadroDecorator(numDec, alumnoDec);
+			Console.WriteLine("\nCUADRO DECORATOR:");
+			Console.WriteLine(cuadroDec.mostrarCalificacion());
+
+
 
 			Console.ReadKey();
 		}

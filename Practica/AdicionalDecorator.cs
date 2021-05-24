@@ -99,9 +99,14 @@ namespace Practica
         {
             indice = 0;
         }
+
+        public void setIndice(int ind)
+        {
+            indice = ind;
+        }
         override public string mostrarCalificacion()
         {
-            return (indice++.ToString() +") "+base.mostrarCalificacion());
+            return (indice.ToString() +") "+base.mostrarCalificacion());
 
         }
     }

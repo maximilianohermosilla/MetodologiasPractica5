@@ -9,6 +9,7 @@ namespace Practica
     {
         public Alumno estudiante;
         bool muyEstudioso=false;
+        
 
         public StudentAdapter(Alumno alumno)
         {
@@ -42,10 +43,20 @@ namespace Practica
         }
         public string showResult()
         {
-            return estudiante.mostrarCalificacion();
+
+            // Practica 4 - Ejercicio 7 //
+   
+
+            DecoratorCalificacion decorador = new Decorator(estudiante);
+            LegajoDecorator legDec = new LegajoDecorator(decorador, estudiante);
+            LetrasDecorator letrDec = new LetrasDecorator(legDec, estudiante);
+            NumeroDecorator numDec = new NumeroDecorator(letrDec, estudiante);
+            PromocionDecorator promDec = new PromocionDecorator(numDec, estudiante);
+            CuadroDecorator cuadroDec = new CuadroDecorator(promDec, estudiante);
+            return (cuadroDec.mostrarCalificacion());
         }
 
-        // Practica 4 - Ejercicio 5
+        // Practica 4 - Ejercicio 5 //
 
 
         public int getCalification()

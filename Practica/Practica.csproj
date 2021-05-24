@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="AdicionalDecorator.cs" />
     <Compile Include="Alumno.cs" />
-    <Compile Include="AlumnoAdapter.cs" />
     <Compile Include="AlumnoMuyEstudioso.cs" />
     <Compile Include="ClaveValor.cs" />
     <Compile Include="Cola.cs" />
