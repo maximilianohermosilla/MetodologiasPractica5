@@ -10,6 +10,7 @@ namespace Practica
 		/// <param name="args"></param>
 		public static void Main(string[] args)
 		{
+
 			// Practica 4 - Ejercicio 4 //
 
 			Console.WriteLine("Practica 4 - Ejercicio 4");
@@ -20,6 +21,20 @@ namespace Practica
 			Alumno alumno;
 			AlumnoMuyEstudioso alumnoEst;
 			StudentAdapter estudiante;
+
+			Alumno al1 = (Alumno)fabricaAlumnos.crearAleatorio();
+			Alumno al2 = (Alumno)fabricaAlumnos.crearAleatorio();
+
+			Console.WriteLine(al1);
+			Console.WriteLine(al2);
+
+			al1.cambiarComparador(new PorNombre());
+
+			Console.WriteLine(al1.sosIgual(al2));
+			Console.WriteLine(al1.sosMayor(al2));
+			Console.WriteLine(al1.sosMenor(al2));
+
+			Console.ReadKey();
 
 			for (int i = 0; i < 20; i++)
             {
