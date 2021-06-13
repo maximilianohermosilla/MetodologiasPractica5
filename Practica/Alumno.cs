@@ -34,7 +34,12 @@ namespace Practica
 			this.nombre=nombre;
 			this.dni=dni;	
 		}
-		
+
+		public void setNombre(string n)
+		{
+			this.nombre = n;
+		}
+
 		public int getLegajo(){
 			return legajo;
 		}
@@ -80,7 +85,7 @@ namespace Practica
 			comparador=comp;
 		}
 		
-		// Practica - Ejercicio 1 //
+		// Practica 4 - Ejercicio 1 //
 		
 		public int responderPregunta (int pregunta){
 			return (aleatorio.Next(1,3));

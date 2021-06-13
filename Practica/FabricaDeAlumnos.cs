@@ -27,7 +27,7 @@ namespace Practica
 				return fabrica.crearAleatorio();
 			}
 		}
-		
+
 		public FabricaDeAlumnos(){
 		}
 		
@@ -57,6 +57,16 @@ namespace Practica
 			Console.WriteLine("PROMEDIO");
 			decimal promedio=Convert.ToDecimal(lector.numeroPorTeclado());
 			Comparable alumno=new Alumno(nombre,dni,legajo,promedio);
+			return alumno;
+		}
+
+		public Comparable crearProxy()
+		{
+			string nombre;
+			string[] nombres = new string[] { "Maxi", "Paula", "Roberto", "Nacho", "Adrian", "Diego", "Lucia", "Florencia", "Cintia", "Ana", "Graciela", "Yesica", "Daiana", "Carolina", "Gaston", "Luis", "Jacinto", "Ramona", "Ignacia", "Viviana" };
+			nombre = nombres[random.Next(0, 19)];
+			Comparable alumno = new ProxyAlumno(nombre);
+			//Console.WriteLine(alumno);
 			return alumno;
 		}
 	}

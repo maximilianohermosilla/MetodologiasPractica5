@@ -10,9 +10,39 @@ namespace Practica
 		/// <param name="args"></param>
 		public static void Main(string[] args)
 		{
+			// Practica 5 - Ejercicio 1 //
+
+			Console.WriteLine("Practica 4 - Ejercicio 4");
+			Console.WriteLine("************************\n");
+
+			Teacher profesor = new Teacher();
+			FabricaDeAlumnos fabricaAlumnos = new FabricaDeAlumnos();
+			ProxyAlumno alumno;
+			AlumnoMuyEstudioso alumnoEst;
+			StudentAdapter estudiante;
+
+			for (int i = 0; i < 20; i++)
+			{
+				alumno = (ProxyAlumno)fabricaAlumnos.crearProxy();
+				if ((i % 2) == 0)
+				{
+					estudiante = new StudentAdapter(alumno);
+				}
+				else
+				{
+					alumnoEst = new AlumnoMuyEstudioso(alumno);
+					estudiante = new StudentAdapter(alumnoEst);
+				}
+				Console.WriteLine(estudiante.estudiante.GetType());
+				profesor.goToClass(estudiante);
+			}
+
+			profesor.teachingAClass();
+
+			Console.ReadKey();
 
 			// Practica 4 - Ejercicio 4 //
-
+			/*
 			Console.WriteLine("Practica 4 - Ejercicio 4");
 			Console.WriteLine("************************\n");
 
@@ -21,20 +51,6 @@ namespace Practica
 			Alumno alumno;
 			AlumnoMuyEstudioso alumnoEst;
 			StudentAdapter estudiante;
-
-			Alumno al1 = (Alumno)fabricaAlumnos.crearAleatorio();
-			Alumno al2 = (Alumno)fabricaAlumnos.crearAleatorio();
-
-			Console.WriteLine(al1);
-			Console.WriteLine(al2);
-
-			al1.cambiarComparador(new PorNombre());
-
-			Console.WriteLine(al1.sosIgual(al2));
-			Console.WriteLine(al1.sosMayor(al2));
-			Console.WriteLine(al1.sosMenor(al2));
-
-			Console.ReadKey();
 
 			for (int i = 0; i < 20; i++)
             {
@@ -54,7 +70,7 @@ namespace Practica
 			profesor.teachingAClass();
 
 			
-
+			*/
 			// Practica 4 - Ejercicio 6 //
 
 

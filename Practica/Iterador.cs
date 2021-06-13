@@ -113,4 +113,32 @@ namespace Practica
 			return (dict.cuantos()<=indice);
 		}
 	}
+
+
+	// Corrección Práctica 2 - Método genérico para recorrer listas //
+	public class IteradorColeccionableLista<T> : Iterador
+	{
+		Coleccionable col;
+		int indice;
+
+		public IteradorColeccionableLista(Coleccionable c)
+		{
+			col = c;
+			indice = 0;
+		}
+		public Comparable actual()
+		{
+			return col.actual(indice);
+		}
+
+		public void siguiente()
+		{
+			indice++;
+		}
+
+		public bool fin()
+		{
+			return (col.cuantos() <= indice);
+		}
+	}
 }

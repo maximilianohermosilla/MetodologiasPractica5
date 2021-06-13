@@ -34,7 +34,12 @@ namespace Practica
 		public int cuantos(){
 			return datos.Count;
 		}
-	
+
+		public Comparable actual(int indice)
+		{
+			return datos[indice];
+		}
+
 		public Comparable menor(){
 			Comparable minimo = datos[0];
 			foreach (Comparable elemento in datos){

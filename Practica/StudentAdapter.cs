@@ -7,8 +7,9 @@ namespace Practica
 
     public class StudentAdapter: Student
     {
-        public Alumno estudiante;
+        public Comparable estudiante;
         bool muyEstudioso=false;
+        bool proxy = false;
         
 
         public StudentAdapter(Alumno alumno)
@@ -20,9 +21,18 @@ namespace Practica
             estudiante = alumno;
         }
 
+        public StudentAdapter(ProxyAlumno alumno)
+        {
+            if (alumno.GetType().ToString() == "Practica.ProxyAlumno")
+            {
+                proxy = true;
+            }
+            estudiante = alumno;
+        }
+
         public string getName()
         {
-            return estudiante.getNombre();
+            return ((Alumno)estudiante).getNombre();
         }
 
         public int yourAnswerIs(int question)
@@ -31,15 +41,20 @@ namespace Practica
             {
                 return ((AlumnoMuyEstudioso)estudiante).responderPregunta(question);
             }
+            else if (proxy)
+            {
+                return ((ProxyAlumno)estudiante).responderPregunta(question);
+
+            }
             else
             {
-                return estudiante.responderPregunta(question);
+                return ((Alumno)estudiante).responderPregunta(question);
             }
             
         }
         public void setScore(int score)
         {
-            estudiante.setCalificacion(score);
+            ((Alumno)estudiante).setCalificacion(score);
         }
         public string showResult()
         {
@@ -47,12 +62,12 @@ namespace Practica
             // Practica 4 - Ejercicio 7 //
    
 
-            DecoratorCalificacion decorador = new Decorator(estudiante);
-            LegajoDecorator legDec = new LegajoDecorator(decorador, estudiante);
-            LetrasDecorator letrDec = new LetrasDecorator(legDec, estudiante);
-            NumeroDecorator numDec = new NumeroDecorator(letrDec, estudiante);
-            PromocionDecorator promDec = new PromocionDecorator(numDec, estudiante);
-            CuadroDecorator cuadroDec = new CuadroDecorator(promDec, estudiante);
+            DecoratorCalificacion decorador = new Decorator((Alumno)estudiante);
+            LegajoDecorator legDec = new LegajoDecorator(decorador, (Alumno)estudiante);
+            LetrasDecorator letrDec = new LetrasDecorator(legDec, (Alumno)estudiante);
+            NumeroDecorator numDec = new NumeroDecorator(letrDec, (Alumno)estudiante);
+            PromocionDecorator promDec = new PromocionDecorator(numDec, (Alumno)estudiante);
+            CuadroDecorator cuadroDec = new CuadroDecorator(promDec, (Alumno)estudiante);
             return (cuadroDec.mostrarCalificacion());
         }
 
@@ -61,7 +76,7 @@ namespace Practica
 
         public int getCalification()
         {
-            return estudiante.getCalificacion();
+            return ((Alumno)estudiante).getCalificacion();
         }
 
         public bool equals(Student student)
