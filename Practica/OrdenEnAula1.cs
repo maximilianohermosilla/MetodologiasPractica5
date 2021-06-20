@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+// Practica 5 - Ejercicios 4 y 5 //
+
 namespace Practica
 {
     interface OrdenEnAula1

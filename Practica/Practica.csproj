@@ -74,6 +74,7 @@
     <Compile Include="Numero.cs" />
     <Compile Include="Observado.cs" />
     <Compile Include="Observador.cs" />
+    <Compile Include="Ordenable.cs" />
     <Compile Include="OrdenEnAula1.cs" />
     <Compile Include="OrdenEnAula2.cs" />
     <Compile Include="Persona.cs" />
