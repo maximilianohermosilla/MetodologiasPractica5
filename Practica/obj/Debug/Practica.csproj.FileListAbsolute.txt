@@ -1,0 +1,20 @@
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\bin\Debug\Practica.exe.config
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\bin\Debug\Practica.exe
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\bin\Debug\Practica.pdb
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.exe
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.pdb
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.csprojAssemblyReference.cache
+F:\GitHub\MetodologiasDeProgramación\Practica\Practica\obj\Debug\Practica.csproj.CoreCompileInputs.cache
+F:\GitHub\Hermosilla Maximiliano - Practica 4\Practica\Practica\obj\Debug\Practica.csprojResolveAssemblyReference.cache
+F:\GitHub\Hermosilla Maximiliano - Practica 4\Practica\Practica\obj\Debug\Practica.exe
+F:\GitHub\Hermosilla Maximiliano - Practica 4\Practica\Practica\bin\Debug\Practica.exe.config
+F:\GitHub\Hermosilla Maximiliano - Practica 4\Practica\Practica\bin\Debug\Practica.exe
+F:\GitHub\Hermosilla Maximiliano - Practica 4\Practica\Practica\bin\Debug\Practica.pdb
+F:\GitHub\Hermosilla Maximiliano - Practica 4\Practica\Practica\obj\Debug\Practica.pdb
+C:\Users\ahermosilla\github\Hermosilla Maximiliano - Practica 4\Practica\Practica\bin\Debug\Practica.exe.config
+C:\Users\ahermosilla\github\Hermosilla Maximiliano - Practica 4\Practica\Practica\bin\Debug\Practica.exe
+C:\Users\ahermosilla\github\Hermosilla Maximiliano - Practica 4\Practica\Practica\bin\Debug\Practica.pdb
+C:\Users\ahermosilla\github\Hermosilla Maximiliano - Practica 4\Practica\Practica\obj\Debug\Practica.exe
+C:\Users\ahermosilla\github\Hermosilla Maximiliano - Practica 4\Practica\Practica\obj\Debug\Practica.pdb
+C:\Users\ahermosilla\github\Hermosilla Maximiliano - Practica 4\Practica\Practica\obj\Debug\Practica.csprojAssemblyReference.cache
+C:\Users\ahermosilla\github\Hermosilla Maximiliano - Practica 4\Practica\Practica\obj\Debug\Practica.csproj.CoreCompileInputs.cache
