@@ -8,10 +8,10 @@ namespace Practica
     public class Aula
     {
         Teacher profesor;
+        StudentAdapter estudiante;
 
         public Aula()
         {
-
         }
 
         public void comenzar()
@@ -20,9 +20,9 @@ namespace Practica
             profesor = new Teacher();
         }
 
-        public void nuevoAlumno(Alumno alumno)
+        public void nuevoAlumno(IAlumno alumno)
         {
-            StudentAdapter estudiante = new StudentAdapter(alumno);
+            estudiante = new StudentAdapter(alumno);
             profesor.goToClass(estudiante);
         }
 

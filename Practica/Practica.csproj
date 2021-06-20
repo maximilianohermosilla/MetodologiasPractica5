@@ -75,12 +75,14 @@
     <Compile Include="Observado.cs" />
     <Compile Include="Observador.cs" />
     <Compile Include="OrdenEnAula1.cs" />
+    <Compile Include="OrdenEnAula2.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Pila.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy.cs" />
     <Compile Include="StudentAdapter.cs" />
+    <Compile Include="SutdentsFactory.cs" />
     <Compile Include="Vendedor.cs" />
   </ItemGroup>
   <ItemGroup>

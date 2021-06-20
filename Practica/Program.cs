@@ -11,7 +11,7 @@ namespace Practica
 		public static void Main(string[] args)
 		{
 
-            // Practica 5 - Ejercicio 1 //
+            // Practica 5 - Ejercicio 1 y 2 //
 
             Console.WriteLine("Practica 4 - Ejercicio 4 y 8");
             Console.WriteLine("Practica 5 - Ejercicio 1");

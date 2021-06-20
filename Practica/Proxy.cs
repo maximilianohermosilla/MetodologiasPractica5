@@ -13,7 +13,6 @@ namespace Practica
         
         public ProxyAlumno()
         {
-
         }
 
         public ProxyAlumno(string nom)
@@ -56,28 +55,16 @@ namespace Practica
 
 
         // METODOS INTERFACE COMPARABLE //
-        public bool sosIgual(Comparable obj)
-        {
-            return alumnoReal.sosIgual(obj);
-        }
+        public bool sosIgual(Comparable obj) { return alumnoReal.sosIgual(obj); }
 
-        public bool sosMenor(Comparable obj)
-        {
-            return alumnoReal.sosMenor(obj);
-        }
+        public bool sosMenor(Comparable obj) { return alumnoReal.sosMenor(obj); }
 
-        public bool sosMayor(Comparable obj)
-        {
-            return alumnoReal.sosMayor (obj);
-        }
+        public bool sosMayor(Comparable obj) { return alumnoReal.sosMayor (obj); }
 
-        public string informar()
-        {
-            return alumnoReal.informar();
-        }
+        public string informar() { return alumnoReal.informar(); }
     }
 
-    public class ProxyAlumnoEstudioso: IAlumno
+    public class ProxyAlumnoEstudioso: IAlumno, Comparable
     {
         AlumnoMuyEstudioso alumnoRealEstudioso = null;
         private string nombreEstudioso;
@@ -85,7 +72,6 @@ namespace Practica
 
         public ProxyAlumnoEstudioso()
         {
-
         }
 
         public ProxyAlumnoEstudioso(string name)
@@ -123,5 +109,14 @@ namespace Practica
         public  void setCalificacion(int calificacion) { alumnoRealEstudioso.setCalificacion(calificacion); }
 
         public  string getNombre() { return nombreEstudioso; }
+
+        // METODOS INTERFACE COMPARABLE //
+        public bool sosIgual(Comparable obj)  { return alumnoRealEstudioso.sosIgual(obj); }
+
+        public bool sosMenor(Comparable obj) { return alumnoRealEstudioso.sosMenor(obj); }
+
+        public bool sosMayor(Comparable obj) { return alumnoRealEstudioso.sosMayor(obj); }
+
+        public string informar() { return alumnoRealEstudioso.informar(); }
     }
 }
