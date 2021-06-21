@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Practica
 {
-    interface Ordenable
+    public interface Ordenable
     {
         void setOrdenInicio(OrdenEnAula1 ordenInicio);
         void setOrdenLlegadaAlumno(OrdenEnAula2 ordenLlegada);

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace Practica
 {
@@ -12,7 +14,7 @@ namespace Practica
 		{
 
             // Practica 5 - Ejercicio 1 y 2 //
-
+            
             Console.WriteLine("Practica 4 - Ejercicio 4 y 8");
             Console.WriteLine("Practica 5 - Ejercicio 1");
             Console.WriteLine("************************\n");
@@ -43,111 +45,41 @@ namespace Practica
 
             profesor.teachingAClass();
 
-            /*
-            // Practica 4 - Ejercicio 4 //
 
-            Console.WriteLine("Practica 4 - Ejercicio 4");
-			Console.WriteLine("************************\n");
+            // Practica 5 - Ejercicio 10 //
 
-			Teacher profesor = new Teacher();
-			
-			StudentsFactory fabricaAlumnos = new StudentsFactory();
-			StudentsTopFactory fabricaAlumnosEstudiosos = new StudentsTopFactory();
-			
-			IAlumno alumno;
-			StudentAdapter estudiante;
+            Console.WriteLine("Practica 5 - Ejercicio 1\n");
+            Console.WriteLine("************************\n");
 
-			for (int i = 0; i < 20; i++)
-            {
-				
-				if ((i%2) == 0)
-                {
-					alumno = fabricaAlumnos.crearAleatorio();
-					estudiante = new StudentAdapter(alumno);
-				}
-                else
-                {
-                	alumno = fabricaAlumnosEstudiosos.crearAleatorio();
-                	estudiante = new StudentAdapter(alumno);
-				}
-				profesor.goToClass(estudiante);
-            }
+            Pila<Comparable> colaOrdenable = new Pila<Comparable>();
 
-			profesor.teachingAClass();
-			
-			
-			// Practica 4 - Ejercicio 6 //
-			
-			Console.WriteLine("Practica 4 - Ejercicio 6");
-			Console.WriteLine("************************\n");
-			
-			
-			IAlumno aluDecorado = (Alumno)FabricaDeComparables.crearAleatorio(2);
-			((Alumno)aluDecorado).setCalificacion(8);
-			
-			Console.WriteLine("\nSIN DECORATOR:");
-			Console.WriteLine(aluDecorado.mostrarCalificacion());
-			
-			aluDecorado = new LegajoDecorator(aluDecorado);			
-			Console.WriteLine("\nLEGAJO DECORATOR:");
-			Console.WriteLine(aluDecorado.mostrarCalificacion());
-			
-			aluDecorado = new LetrasDecorator(aluDecorado);
-			Console.WriteLine("\nLETRAS DECORATOR:");
-			Console.WriteLine(aluDecorado.mostrarCalificacion());
-			
-			aluDecorado = new PromocionDecorator(aluDecorado);
-			Console.WriteLine("\nPROMOCION DECORATOR:");
-			Console.WriteLine(aluDecorado.mostrarCalificacion());
-			
-			aluDecorado = new NumeroDecorator(aluDecorado);
-			Console.WriteLine("\nINDICE DECORATOR:");
-			Console.WriteLine(aluDecorado.mostrarCalificacion());
-			
-			aluDecorado = new CuadroDecorator(aluDecorado);
-			Console.WriteLine("\nDECORATOR FINAL:");
-			Console.WriteLine(aluDecorado.mostrarCalificacion());
-						
+            Aula aulaColeccion = new Aula();
 
-			// Practica 4 - Ejercicio 6.1 //
+            colaOrdenable.setOrdenInicio(new OrdenInicio(aulaColeccion));
+            colaOrdenable.setOrdenLlegadaAlumno(new OrdenLlegaAlumno(aulaColeccion));
+            colaOrdenable.setOrdenAulaLLena(new OrdenAulaLlena(aulaColeccion));
+
+            llenar(colaOrdenable, 2);
+            llenar(colaOrdenable, 3);
 
 
-			Console.WriteLine("Practica 4 - Ejercicio 6.1");
-			Console.WriteLine("**************************\n");
-			
-			
-			IAlumno aluDec = (Alumno)FabricaDeComparables.crearAleatorio(2);
-			aluDec.setCalificacion(6);
-			
-			aluDec = new LegajoDecorator(aluDec);			
-			aluDec = new LetrasDecorator(aluDec);
-			aluDec = new PromocionDecorator(aluDec);
-			aluDec = new NumeroDecorator(aluDec);
-			aluDec = new CuadroDecorator(aluDec);
-			
-			Console.WriteLine("\nDECORATOR FINAL:");
-			Console.WriteLine(aluDec.mostrarCalificacion());
-			*/
-			
-			
-			
-			
-			Console.ReadKey();
+            Console.ReadKey();
 		}
-		
-		
-		//    METODOS    //
-		//***************//
-		
-		
-	
-		// Practica 3 - Ejercicio 6
+
+
+        //    METODOS    //
+        //***************//
+
+
+
+        // Practica 3 - Ejercicio 6 //
+
 		
 		public static void llenar(Coleccionable lista, int opcion){
 			Random random = new Random();
 			for (int x=1; x<=20 ; x++){
 				Comparable comp= FabricaDeComparables.crearAleatorio(opcion);
-				((Coleccionable)lista).agregar(comp);
+				lista.agregar(comp);
 			}
 		}
 		

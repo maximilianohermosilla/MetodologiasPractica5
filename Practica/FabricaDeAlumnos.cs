@@ -9,6 +9,7 @@ namespace Practica
     public class FabricaDeAlumnos : FabricaDeComparables
     {
         static Random random = new Random();
+        
 
         public override Comparable crearComparable(FabricaDeComparables fabrica)
         {
@@ -81,6 +82,7 @@ namespace Practica
     public class FabricaDeAlumnosEstudiosos : FabricaDeComparables
     {
         static Random random = new Random();
+        static Random random2 = new Random();
 
         public override Comparable crearComparable(FabricaDeComparables fabrica)
         {
@@ -110,15 +112,15 @@ namespace Practica
 
         public override Comparable crearAleatorio()
         {
-
+            
             string nombre;
             int dni, legajo;
             decimal promedio;
             string[] nombres = new string[] { "Maxi", "Paula", "Roberto", "Nacho", "Adrian", "Diego", "Lucia", "Florencia", "Cintia", "Ana", "Graciela", "Yesica", "Daiana", "Carolina", "Gaston", "Luis", "Jacinto", "Ramona", "Ignacia", "Viviana" };
-            nombre = nombres[random.Next(0, 19)];
-            dni = random.Next(12000000, 40000000);
-            legajo = random.Next(1, 2000);
-            promedio = decimal.Round((Convert.ToDecimal((random.NextDouble() + random.Next(1, 10)))), 2);
+            nombre = nombres[random2.Next(0, 10)+random.Next(0,9)];
+            dni = random2.Next(10000000, 50000000);
+            legajo = random2.Next(1, 1000+random.Next(1, 1000));
+            promedio = decimal.Round((Convert.ToDecimal((random2.NextDouble() + random2.Next(1, 10)))), 2);
             Comparable alumnoBase = new Alumno(nombre, dni, legajo, promedio);
             AlumnoMuyEstudioso alumno = new AlumnoMuyEstudioso((Alumno)alumnoBase);
             //Console.WriteLine(alumno);

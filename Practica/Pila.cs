@@ -11,9 +11,12 @@ namespace Practica
 		private List<Comparable> datos = new List<Comparable>();
 		IteradorPila<T> it;
 		EstrategiaComparar comparador;
-		
-		
-		public void push(Comparable elem) {
+        OrdenEnAula1 ordenInicio;
+        OrdenEnAula1 ordenAulaLlena;
+        OrdenEnAula2 ordenLlegaAlumno;
+
+
+        public void push(Comparable elem) {
 			this.datos.Add(elem);
 		}
 	
@@ -54,12 +57,29 @@ namespace Practica
 			}
 			return maximo;
 		}
-		
-		public void agregar(Comparable obj){
-			this.datos.Add(obj);
-		}
-		
-		public bool contiene(Comparable obj){
+
+        public void agregar(Comparable obj)
+        {
+            if (this.isEmpty())
+            {
+                Console.WriteLine("Aula vacia. Orden Inicio");
+                ordenInicio.ejecutar();
+            }
+            this.datos.Add(obj);
+
+            if (this.cuantos() >= 40)
+            {
+                Console.WriteLine("Alumnos=40. Orden Aula Llena");
+                ordenAulaLlena.ejecutar();
+            }
+            else
+            {
+                Console.WriteLine("Orden llega alumno " + this.cuantos());
+                ordenLlegaAlumno.ejecutar(obj);
+            }
+        }
+
+        public bool contiene(Comparable obj){
 			bool existe=false;
 			if(this.datos.Count>0){
 				foreach (Comparable elemento in datos){
@@ -98,6 +118,21 @@ namespace Practica
 		public void cambiarComparador(EstrategiaComparar comp){
 			comparador=comp;
 		}
-		
-	}
+
+        // METODOS ORDENABLE //
+        public void setOrdenInicio(OrdenEnAula1 orden)
+        {
+            ordenInicio = orden;
+        }
+
+        public void setOrdenLlegadaAlumno(OrdenEnAula2 orden)
+        {
+            ordenLlegaAlumno = orden;
+        }
+
+        public void setOrdenAulaLLena(OrdenEnAula1 orden)
+        {
+            ordenAulaLlena = orden;
+        }
+    }
 }

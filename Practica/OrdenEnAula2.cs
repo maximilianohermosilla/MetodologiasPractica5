@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Practica
 {
-    interface OrdenEnAula2
+    public interface OrdenEnAula2
     {
         void ejecutar(Comparable comp);
     }

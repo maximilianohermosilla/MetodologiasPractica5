@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Practica
 {
-    interface OrdenEnAula1
+    public interface OrdenEnAula1
     {
         void ejecutar();
     }
